@@ -18,4 +18,5 @@ func _physics_process(delta: float) -> void:
 		if queue_restart:
 			get_tree().current_scene.restart()
 			queue_restart = false
-			
+		if Input.is_action_just_pressed("esc"):
+			get_tree().change_scene_to_file("res://scenes/start_screen.tscn")

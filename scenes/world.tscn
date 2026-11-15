@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bipo8o2awmp07" path="res://scenes/editor.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dne4vo8tc7qan" path="res://scenes/gradient.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://ejoq6fyd71nq" path="res://scenes/goal.tscn" id="6_qfnet"]
-[ext_resource type="AudioStream" uid="uid://c2l124pwt3m8" path="res://christianbodhi-movie-theme-1-142893.mp3" id="7_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dynskgneo1wv3" path="res://scenes/trashcan.tscn" id="7_i7141"]
 
 [node name="world" type="Node2D" unique_id=530875281]
@@ -80,9 +79,5 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "START"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2121776578]
-stream = ExtResource("7_4mrxx")
-autoplay = true
 
 [connection signal="pressed" from="start stop" to="." method="_on_start_stop_pressed"]

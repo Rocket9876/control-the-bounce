@@ -9,7 +9,7 @@ func _on_easy_pressed() -> void:
 
 
 func _on_hard_pressed() -> void:
-	global.limits = {"boost":1,"platform":3,"vertical platform":1}
+	global.limits = {"boost":0,"platform":3,"vertical platform":1}
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 

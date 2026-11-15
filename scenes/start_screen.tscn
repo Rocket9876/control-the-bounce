@@ -76,7 +76,7 @@ grow_vertical = 0
 tooltip_text = "saves a screenshot every time when you finish a level (not available on web)"
 theme_override_font_sizes/font_size = 32
 button_pressed = true
-text = "save screenshot"
+text = "save screenshots"
 
 [connection signal="pressed" from="Buttons/EASY" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Buttons/HARD" to="." method="_on_hard_pressed"]
