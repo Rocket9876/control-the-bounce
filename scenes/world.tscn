@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://ckoswuqhbi22y"]
+
+[ext_resource type="PackedScene" uid="uid://bp3r53k14fod4" path="res://scenes/ball.tscn" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://dp2s2jr4uksrr" path="res://scripts/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://bipo8o2awmp07" path="res://scenes/editor.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dne4vo8tc7qan" path="res://scenes/gradient.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://ejoq6fyd71nq" path="res://scenes/goal.tscn" id="6_qfnet"]
+[ext_resource type="AudioStream" uid="uid://c2l124pwt3m8" path="res://christianbodhi-movie-theme-1-142893.mp3" id="7_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://dynskgneo1wv3" path="res://scenes/trashcan.tscn" id="7_i7141"]
+
+[node name="world" type="Node2D" unique_id=530875281]
+script = ExtResource("1_rwgxs")
+start_force_angles = {
+"max_angle": 320.0,
+"min_angle": 220.0
+}
+start_force = 1200.0
+
+[node name="Ball" parent="." unique_id=1350299652 groups=["ball"] instance=ExtResource("1_nnsk1")]
+position = Vector2(143, 237)
+gravity_scale = 0.5
+kill_height = 1300
+
+[node name="Control" type="Control" parent="." unique_id=1295365243]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2304.0
+offset_bottom = 1296.0
+mouse_filter = 1
+
+[node name="editor" parent="Control" unique_id=128056320 instance=ExtResource("4_k0juu")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -650.0
+offset_right = 2.0
+grow_vertical = 0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=268538156]
+position = Vector2(1152, 648)
+zoom = Vector2(0.5, 0.5)
+
+[node name="gradient" parent="." unique_id=1104800394 instance=ExtResource("5_71j4m")]
+z_index = -1
+position = Vector2(1673.0752, 1274)
+scale = Vector2(46.251495, 5913.109)
+
+[node name="goal" parent="." unique_id=1443933599 instance=ExtResource("6_qfnet")]
+position = Vector2(1722, 124)
+
+[node name="goal marker" type="Node2D" parent="." unique_id=703560949]
+
+[node name="top left" type="Marker2D" parent="goal marker" unique_id=673065248]
+position = Vector2(1870, 124)
+
+[node name="bottem right" type="Marker2D" parent="goal marker" unique_id=105528649]
+position = Vector2(2234, 980)
+
+[node name="trashcan" parent="." unique_id=1570748146 instance=ExtResource("7_i7141")]
+position = Vector2(2234, 58)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=269450252]
+offset_right = 372.0
+offset_bottom = 134.0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 32
+text = "STREAK: "
+
+[node name="start stop" type="Button" parent="." unique_id=1600163884]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2027.0
+offset_top = 1161.0
+offset_right = 2290.0
+offset_bottom = 1283.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2121776578]
+stream = ExtResource("7_4mrxx")
+autoplay = true
+
+[connection signal="pressed" from="start stop" to="." method="_on_start_stop_pressed"]

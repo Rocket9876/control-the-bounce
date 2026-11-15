@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bp3r53k14fod4"]
+
+[ext_resource type="Script" uid="uid://dc5ojknchw837" path="res://scripts/ball.gd" id="1_7s4qf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n1dj2"]
+bounce = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_vgy2a"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgy2a"]
+radius = 25.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1350299652]
+physics_material_override = SubResource("PhysicsMaterial_n1dj2")
+freeze = true
+script = ExtResource("1_7s4qf")
+
+[node name="Arrow" type="Polygon2D" parent="." unique_id=1004911185]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-3.8146973e-06, -3.0517578e-05)
+polygon = PackedVector2Array(0, 150, 45, 80, 15, 85, 15, 0, -15, 0, -15, 85, -45, 80)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1232518735]
+mesh = SubResource("SphereMesh_vgy2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491516155]
+shape = SubResource("CircleShape2D_vgy2a")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=17359789]
+rect = Rect2(-25, -25, 50, 50)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ejoq6fyd71nq"]
+
+[ext_resource type="Script" uid="uid://cdltpqgm40yod" path="res://scripts/goal.gd" id="1_jbojv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vgy2a"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgy2a"]
+radius = 25.019993
+
+[node name="goal" type="Node2D" unique_id=1443933599]
+script = ExtResource("1_jbojv")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1177924830]
+modulate = Color(0, 0.7324388, 1.92523e-07, 1)
+mesh = SubResource("SphereMesh_vgy2a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=608757616]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=89710094]
+shape = SubResource("CircleShape2D_vgy2a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

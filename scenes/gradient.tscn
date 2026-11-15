@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dne4vo8tc7qan"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vgy2a"]
+
+[sub_resource type="Gradient" id="Gradient_e7o2c"]
+offsets = PackedFloat32Array(0.7028302, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e7o2c"]
+gradient = SubResource("Gradient_e7o2c")
+
+[node name="gradient" type="MeshInstance2D" unique_id=1104800394]
+position = Vector2(575.9616, 23.196426)
+rotation = 4.712389
+scale = Vector2(46.251495, 1151.9081)
+mesh = SubResource("BoxMesh_vgy2a")
+texture = SubResource("GradientTexture1D_e7o2c")

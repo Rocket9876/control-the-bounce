@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://igescc4kka8d"]
+
+[ext_resource type="Script" uid="uid://gy35vg0lj2yd" path="res://scripts/boost.gd" id="1_8xfal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgy2a"]
+size = Vector2(106, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va0ir"]
+size = Vector2(106, 64)
+
+[node name="boost" type="StaticBody2D" unique_id=645345103]
+z_index = -3
+collision_layer = 2048
+collision_mask = 2048
+input_pickable = true
+script = ExtResource("1_8xfal")
+power = 2000.0
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=347669770]
+position = Vector2(-14, 0)
+color = Color(1, 0.7764706, 0, 1)
+polygon = PackedVector2Array(0, 32, 32, 0, 0, -32)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1590154891]
+position = Vector2(23, 0)
+color = Color(1, 0.7764706, 0, 1)
+polygon = PackedVector2Array(0, 32, 32, 0, 0, -32)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=2093295399]
+position = Vector2(-51, 0)
+color = Color(1, 0.7764706, 0, 1)
+polygon = PackedVector2Array(0, 32, 32, 0, 0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1244007095]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_vgy2a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2070181570]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=487295436]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_va0ir")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

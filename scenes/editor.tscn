@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bipo8o2awmp07"]
+
+[ext_resource type="PackedScene" uid="uid://cga3e3tbkykyw" path="res://scenes/editor_elements.tscn" id="1_b1cmn"]
+
+[node name="editor" type="Control" unique_id=128056320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=572875790]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+
+[node name="Editor elements" parent="." unique_id=328130740 instance=ExtResource("1_b1cmn")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 6.0
+offset_top = 490.0
+offset_right = 163.0
+offset_bottom = 655.0
+element = "res://scenes/platform.tscn"
+limit = 5
+item_scale = 0.5
+group_name = "platform"
+
+[node name="Editor elements2" parent="." unique_id=1790521133 instance=ExtResource("1_b1cmn")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 336.0
+offset_top = 490.0
+offset_right = 493.0
+offset_bottom = 655.0
+element = "res://scenes/boost.tscn"
+limit = 1
+item_scale = 0.5
+group_name = "boost"
+
+[node name="Editor elements3" parent="." unique_id=379701509 instance=ExtResource("1_b1cmn")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 171.0
+offset_top = 490.0
+offset_right = 328.0
+offset_bottom = 655.0
+element = "res://scenes/vertical_platform.tscn"
+limit = 3
+item_scale = 0.5
+group_name = "vertical platform"
