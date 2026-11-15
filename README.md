@@ -1,5 +1,5 @@
 # control the bounce
-A game about planning and editing, and choosing the best moves.
+A game about planning, editing and choosing the best moves.
 
 <img width="1440" height="805" alt="image" src="https://github.com/user-attachments/assets/2251a6a4-f068-4b70-9245-fcca129192c8" />
 
